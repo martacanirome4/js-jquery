@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registro con JQuery</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <button class="button" id="registerButton">Regístrate</button>
+    <button class="button" id="registerButton">Register</button>
     <div class="hidden-container" id="registrationForm">
-        <h2>Formulario de registro</h2>
-        <input type="text" id="name" placeholder="Nombre y Apellidos">
+        <h2>Registration Form</h2>
+        <input type="text" id="name" placeholder="Name and Surname">
+        <p class="error-message" id="nameError"></p>
         <br><br>
         <input type="text" id="email" placeholder="Email">
+        <p class="error-message" id="emailError"></p>
         <br><br>
-        <input type="text" id="phone" placeholder="Teléfono Móvil">
+        <input type="text" id="phone" placeholder="Phone">
+        <p class="error-message" id="phoneError"></p>
         <br><br>
-        <input type="password" id="password" placeholder="Contraseña">
+        <input type="password" id="password" placeholder="Password">
+        <p class="error-message" id="passwordError"></p>
         <br><br>
-        <button id="submitButton">Enviar</button>
-        <button id="cancelButton">Cancelar</button>
+        <button id="submitButton">Submit</button>
+        <button id="cancelButton">Cancel</button>
     </div>
-    <div id="confirmationMessage" class="hidden-container">¡Usuario registrado con éxito!</div>
+    <div id="confirmationMessage" class="hidden-container">Registration successful!</div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </body>
