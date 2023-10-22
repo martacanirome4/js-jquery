@@ -1,8 +1,11 @@
 // script.js
 $(document).ready(function () {
     $("#registerButton").click(function () {
-        $("#registrationForm").fadeIn();
         $("#confirmationMessage").hide();
+        $("#registrationForm").slideUp(400, function () {
+            // Animation complete.
+            $(this).show(); // Show the form again
+        });
     });
 
     $("#cancelButton").click(function () {
@@ -23,32 +26,32 @@ $(document).ready(function () {
         const nameRegex = /^[\p{L}]+([\s][\p{L}]+)+$/u;
         const isNameValid = nameRegex.test(name);
         if (!isNameValid) {
-            $("#nameError").text("Name and surname must contain at least two words, with letters only.");
+            $("#nameError").text("Por favor, introduce tu nombre y apellidos");
         }
 
         // Email validation
         const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
         const isEmailValid = emailRegex.test(email);
         if (!isEmailValid) {
-            $("#emailError").text("Please enter a valid email address.");
+            $("#emailError").text("Por favor, introduce una dirección de correo electrónico válida");
         }
 
         // Phone validation
         const phoneRegex = /^[0-9]+$/;
         const isPhoneValid = phoneRegex.test(phone);
         if (!isPhoneValid) {
-            $("#phoneError").text("Phone must contain only numbers, with no spaces.");
+            $("#phoneError").text("El teléfono debe contener sólo números, sin espacios");
         }
 
         // Password validation
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
         const isPasswordValid = passwordRegex.test(password);
         if (!isPasswordValid) {
-            $("#passwordError").text("Password must be at least 8 characters with one uppercase letter, one lowercase letter, and one number.");
+            $("#passwordError").text("La contraseña debe tener al menos 8 caracteres con una letra mayúscula, una letra minúscula y un número");
         }
 
         if (isNameValid && isEmailValid && isPhoneValid && isPasswordValid) {
-            $("#confirmationMessage").text("Registration successful!");
+            $("#confirmationMessage").text("¡Usuario registrado con éxito!");
             $("#confirmationMessage").show();
         } else {
             $("#confirmationMessage").hide();

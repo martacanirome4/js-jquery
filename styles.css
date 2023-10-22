@@ -1,16 +1,18 @@
 /* styles.css */
 body {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    color: #311901;
 }
 .button {
     padding: 15px 30px;
-    background-color: #007BFF;
+    background-color: #ff00bb;
     color: #fff;
-    border: none;
+    border: whitesmoke;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
@@ -18,4 +20,21 @@ body {
 .hidden-container {
     display: none;
     text-align: center;
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    margin: 0;
+    align-items: left;
+    color: #311901;
+
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    align-items: center;
 }
